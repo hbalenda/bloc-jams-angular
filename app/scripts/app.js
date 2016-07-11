@@ -8,18 +8,21 @@
         $stateProvider
             .state('landing', {
                 url: '/',
+                controller: 'LandingCtrl as landing',
                 templateUrl: '/templates/landing.html'
             })
             .state('album', {
                 url: '/album',
+                controller: 'CollectionCtrl as collection',
                 templateUrl: '/templates/album.html'
             })
             .state('collection', {
                 url: '/collection',
                 templateUrl: '/templates/collection.html'
             });
-        angular
-            .module('blocJams', ['ui.router'])
-            .config(config);
     }
+    
+    angular
+        .module('blocJams', ['ui.router'])
+        .config(config);
 })();
