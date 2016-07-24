@@ -24,10 +24,16 @@
         SongPlayer.currentSong = null;
         
         /**
-        * @desc Current playback time (in seconds) of currently playing song
-        * @type {Number}
+        @desc: Current playback time (in seconds) of currently playing song
+        @type: {Number}
         */
         SongPlayer.currentTime = null;
+        
+        /**
+        @desc: Current volume (range: 0-100)
+        @type: {Number}
+        */
+        SongPlayer.currentVolume = null;
         
         /**
         @desc: Buzz object audio file
@@ -157,6 +163,11 @@
      if (currentBuzzObject) {
          currentBuzzObject.setTime(time);
      }
+    };
+    
+    SongPlayer.setVolume = function(volume) {
+        currentBuzzObject.setVolume(volume);
+        currentVolume = volume;
     };
     
     angular
